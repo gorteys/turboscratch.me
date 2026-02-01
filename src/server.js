@@ -417,6 +417,7 @@ app.get('/{*_}', async (req, res, next) => {
       acceptRanges: false,
       extensions: false,
       index: false,
+      dotfiles: 'allow',
     });
   }
 });

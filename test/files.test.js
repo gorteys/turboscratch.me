@@ -47,3 +47,9 @@ it('is not vulnerable to path traversal', () => {
       .expect(404)
   ]);
 });
+
+it('serves .well-known', () => {
+  return request.get('/.well-known/security.txt')
+    .set('Host', 'localhost')
+    .expect('test security.txt\n');
+});
